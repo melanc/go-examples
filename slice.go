@@ -45,27 +45,21 @@ func list(slice []int) {
 }
 
 func main(){
-	//数组，长度固定
-	a := [3]int{1, 2}
-	fmt.Println(a)
-	// 数组，省略长度
-	b := [...]int{1, 2, 3}
-	fmt.Println(len(b))
-	// 数组，指定索引
-	c := [5]int{2: 50, 3: 100}
-	fmt.Println(c)
+	// 声明
+	var s1 []int
 
-	// 切片，没有长度
-	s1 := []int{0, 1, 2, 3, 4, 5}
+	// 初始化方式一
+	s1 = []int{0, 1, 2, 3, 4, 5}
 	fmt.Printf("s1 len: %d\n", cap(s1))
 	fmt.Printf("s1 type: %T\n", reflect.TypeOf(s1))
 
-	// 切片，使用make初始化
+	// 初始化方式二
 	s2 := make([]int, 6)
 	fmt.Printf("s2 len: %d, cap: %d\n", len(s2), cap(s2))
 
-	s2 = s1[:3]
-	fmt.Printf("s2: %v, len: %d, cap: %d\n", s2, len(s2), cap(s2))
+	// 初始化方式三
+	s3 := s2[3:8]
+	fmt.Printf("s3: %v, len: %d, cap: %d\n", s2, len(s3), cap(s3))
 
 	s1 = add(s1, 6)
 	fmt.Printf("s1: %v\n", s1)
@@ -77,8 +71,6 @@ func main(){
 	}
 	fmt.Printf("s2: %v, len: %d, cap: %d\n", s2, len(s2), cap(s2))
 
-	s3 := s2[3:8]
-	fmt.Printf("s3: %v, len: %d, cap: %d\n", s2, len(s3), cap(s3))
 	// 底层引用同一数组
 	fmt.Printf("s2 ptr: %p, s3 ptr: %p\n", &s2[3], &s3[0])
 

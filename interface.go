@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 定义接口
 type Handler interface {
 	Do(k, v interface{})
 }
@@ -16,6 +17,7 @@ func Each(m map[interface{}]interface{}, h Handler) {
 
 type welcome string
 
+// 实现Handler接口
 func (w welcome)Do(k, v interface{}){
 	fmt.Printf("%s, 我叫%s，今年%d岁\n", w, k, v)
 }

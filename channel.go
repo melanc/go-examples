@@ -14,22 +14,34 @@ func write(ch chan int, n int) {
 }
 
 func main() {
-	data := make(chan int) // 数据交换队列
-	//data := make(chan int, 3) // 带缓冲区的数据交换队列
+	// 声明
+	var data chan int
+
+	// 初始化
+	data = make(chan int) // 数据交换队列
+	//data = make(chan int, 3) // 带缓冲区的数据交换队列
 	exit := make(chan bool) // 退出通知
 
 	go func() {
-		for d := range data { // 从队列迭代接收数据，直到 close 。
+		// 从队列迭代接收数据，直到 close
+		for d := range data {
 			fmt.Printf("read: %d\n", d)
 		}
 		fmt.Println("recv over.")
-		exit <- true // 发出退出通知。
+		// 发出退出通知
+		exit <- true
 	}()
 
-	write(data, 1) // 发送数据。
-	write(data, 2)
-	write(data, 3)
-	close(data) // 关闭队列。
+	// 发送数据
+	data <- 1
+	fmt.Printf("write: %d\n", 1)
+	data <- 2
+	fmt.Printf("write: %d\n", 2)
+
+	// 关闭队列
+	close(data)
 	fmt.Println("send over.")
-	<-exit // 等待退出通知。
+
+	// 接收数据
+	<-exit
 }

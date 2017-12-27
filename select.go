@@ -10,7 +10,8 @@ func main() {
 	go func() {
 		v, ok, s := 0, false, ""
 		for {
-			select { // 随机选择可⽤ channel，接收数据。
+			// 随机选择可⽤ channel，接收数据
+			select {
 			case v, ok = <-a:
 				s = "a"
 			case v, ok = <-b:
@@ -24,11 +25,14 @@ func main() {
 		}
 	}()
 	for i := 0; i < 5; i++ {
-		select { // 随机选择可⽤ channel，发送数据。
+		// 随机选择可⽤ channel，发送数据
+		select {
 		case a <- i:
 		case b <- i:
 		}
 	}
 	close(a)
-	select {} // 没有可⽤ channel，阻塞 main goroutine。
+
+	// 没有可⽤ channel，阻塞 main goroutine
+	select {}
 }
