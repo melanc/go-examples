@@ -10,12 +10,15 @@ type Rect struct {
 func main(){
 	// 返回指针
 	var b *bool = new(bool)
+	*b = true
 	fmt.Println(*b)
 
 	var i *int = new(int)
+	*i = 100
 	fmt.Println(*i)
 
 	var s *string = new(string)
+	*s = "golang"
 	fmt.Println(*s)
 
 	var p *[]int = new([]int)
