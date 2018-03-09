@@ -1,8 +1,11 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func main() {
+func TestArray(t *testing.T) {
 	// 声明
 	var a [3]int
 

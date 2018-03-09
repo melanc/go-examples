@@ -1,8 +1,9 @@
-package main
+package base
 
 import (
 	"fmt"
 	"sync"
+	"testing"
 )
 
 func write(ch chan int, n int) {
@@ -13,7 +14,7 @@ func write(ch chan int, n int) {
 	l.Unlock()
 }
 
-func main() {
+func TestChannel(t *testing.T) {
 	// 声明
 	var data chan int
 
