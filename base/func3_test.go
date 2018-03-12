@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 // 声明函数类型
 type A func(int, int)
@@ -13,7 +16,7 @@ func serve(int,int) {
 	fmt.Println("serve1")
 }
 
-func main() {
+func TestFunc3(t *testing.T) {
 	a := A(serve)
 	a(1,2)
 	a.Serve()

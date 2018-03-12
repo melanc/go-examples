@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 var (
 	a = 1
@@ -8,7 +11,7 @@ var (
 	c = 3.14
 )
 
-func main(){
+func TestVar(t *testing.T){
 	// 声明
 	var v1 *int //指针
 	var v2 map[string] int //key 为string value为int的map

@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 func test(x int) {
 	defer fmt.Println("aaaaaa")
@@ -18,7 +21,7 @@ func test2(){
 	fmt.Println("test2")
 }
 
-func main(){
+func TestDefer(t *testing.T){
 	test(0)
 	test2()
 }

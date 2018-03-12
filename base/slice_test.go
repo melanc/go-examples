@@ -1,8 +1,9 @@
-package main
+package base
 
 import (
 	"fmt"
 	"reflect"
+	"testing"
 )
 
 //删除
@@ -44,7 +45,7 @@ func list(slice []int) {
 	}
 }
 
-func main(){
+func TestSlice(t *testing.T){
 	// 声明
 	var s1 []int
 

@@ -1,7 +1,10 @@
-package main
+package base
 
 import "fmt"
-import "errors"
+import (
+	"errors"
+	"testing"
+)
 
 func Add(a int, b int) (ret int, err error) {
 	if a < 0 || b < 0 { // 假定只支持两个非负数字的加法
@@ -11,7 +14,7 @@ func Add(a int, b int) (ret int, err error) {
 	return a + b, nil
 }
 
-func main() {
+func TestFunc(t *testing.T) {
 	fmt.Println(Add(-1, 1))
 	fmt.Println(Add(10, 1))
 }

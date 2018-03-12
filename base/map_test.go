@@ -1,12 +1,13 @@
-package main
+package base
 
 import (
 	"fmt"
+	"testing"
 )
 
 type user struct{ name string }
 
-func main() {
+func TestMain(t *testing.T) {
 	// 声明
 	var m map[int]user
 

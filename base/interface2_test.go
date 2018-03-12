@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type Handler2 interface {
 	Do(k, v interface{})
@@ -27,7 +30,7 @@ func (w welcome2)selfInfo(k, v interface{}){
 	fmt.Printf("%s, 我叫%s，今年%d岁\n", w, k, v)
 }
 
-func main(){
+func TestInterface2(t *testing.T){
 	m := make(map[interface{}]interface{}, 9)
 	m["小明"] = 20
 	m["小红"] = 21

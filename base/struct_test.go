@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type User struct {
 	name string
@@ -20,7 +23,7 @@ func (*Manager) Work(){
 	fmt.Println("working...")
 }
 
-func main() {
+func TestStruct(t *testing.T) {
 	// 创建方式一：T{...}
 	u1 := User{
 		name: "wang",

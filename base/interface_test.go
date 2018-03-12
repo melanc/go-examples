@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 // 定义接口
 type Handler interface {
@@ -22,7 +25,7 @@ func (w welcome)Do(k, v interface{}){
 	fmt.Printf("%s, 我叫%s，今年%d岁\n", w, k, v)
 }
 
-func main(){
+func TestInterface(t *testing.T){
 	m := make(map[interface{}]interface{}, 9)
 	m["小明"] = 20
 	m["小红"] = 21

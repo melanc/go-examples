@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 // 接口
 type Handler3 interface {
@@ -31,7 +34,7 @@ func selfInfo(k, v interface{}) {
 	fmt.Printf("大家好,我叫%s,今年%d岁\n", k, v)
 }
 
-func main() {
+func TestInterface3(t *testing.T) {
 	persons := make(map[interface{}]interface{})
 	persons["张三"] = 20
 	persons["李四"] = 23

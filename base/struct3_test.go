@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type Data struct{
 	x int
@@ -15,7 +18,7 @@ func (self Data) ValueTest() {
 func (self *Data) PointerTest() {
 	fmt.Printf("Pointer: %p\n", self)
 }
-func main() {
+func TestStruct3(t *testing.T) {
 	d := Data{}
 	p := &d
 	fmt.Printf("Data: %p\n", p)

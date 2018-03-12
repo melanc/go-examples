@@ -1,6 +1,9 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type Student struct {
 	id int
@@ -15,7 +18,7 @@ func (self Student) TestVal() {
 	fmt.Printf("%p, %v\n", &self, self)
 }
 
-func main() {
+func TestStruct2(t *testing.T) {
 	u := Student{1, "Tom"}
 	u.Test()
 	// 隐式传递 receiver

@@ -1,15 +1,16 @@
-package main
+package base
 
 import (
 	"fmt"
 	"os"
+	"testing"
 )
 
 type point struct {
 	x, y int
 }
 
-func main() {
+func TestPrint(t *testing.T) {
 	// 为常规值的格式化设计提供了多种打印方式。
 	p := point{1, 2}
 

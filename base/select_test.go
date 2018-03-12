@@ -1,11 +1,12 @@
-package main
+package base
 
 import (
 	"fmt"
 	"os"
+	"testing"
 )
 
-func main() {
+func TestSelect(t *testing.T) {
 	a, b := make(chan int, 3), make(chan int)
 	go func() {
 		v, ok, s := 0, false, ""

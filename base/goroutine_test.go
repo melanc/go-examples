@@ -1,8 +1,9 @@
-package main
+package base
 
 import (
 	"sync"
 	"math"
+	"testing"
 )
 
 func sum(id int) {
@@ -12,7 +13,7 @@ func sum(id int) {
 	}
 	println(id, x)
 }
-func main() {
+func TestGoroutine(t *testing.T) {
 	wg := new(sync.WaitGroup)
 	wg.Add(2)
 	for i := 0; i < 2; i++ {

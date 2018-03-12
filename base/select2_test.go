@@ -1,11 +1,12 @@
-package main
+package base
 
 import (
 	"fmt"
 	"time"
+	"testing"
 )
 
-func main() {
+func TestSelect2(t *testing.T) {
 	w := make(chan bool)
 	c := make(chan int, 2)
 	go func() {

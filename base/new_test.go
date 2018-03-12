@@ -1,13 +1,16 @@
-package main
+package base
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type Rect struct {
 	x, y float64
 	width, height float64
 }
 
-func main(){
+func TestNew(t *testing.T){
 	// 返回指针
 	var b *bool = new(bool)
 	*b = true

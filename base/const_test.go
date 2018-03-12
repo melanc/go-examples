@@ -1,4 +1,4 @@
-package main
+package base
 
 //声明一个常量
 
