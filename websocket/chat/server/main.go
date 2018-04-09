@@ -27,7 +27,7 @@ type Message struct {
 func main() {
 	// Create a simple server
 	// Configure websocket route
-	http.HandleFunc("/ws", handleConnections)
+	http.HandleFunc("/chat", handleConnections)
 
 	// Start listening for incoming chat messages
 	go handleMessages()
@@ -46,6 +46,7 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	log.Printf("connect success, ip: %s", r.Host)
 	// Make sure we close the connection when the function returns
 	defer ws.Close()
 
@@ -61,6 +62,7 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			delete(clients, ws)
 			break
 		}
+		log.Printf("username: %s, msg: %s", msg.Username, msg.Message)
 		// Send the newly received message to the broadcast channel
 		broadcast <- msg
 	}
