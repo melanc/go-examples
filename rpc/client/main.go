@@ -13,8 +13,14 @@ func main() {
     if err != nil {
         fmt.Println("连接不到服务器：", err)
     }
-    var args = common.Args{40, 3}
+
+    var funcArgs = func (f float64) {
+        fmt.Printf("output: %f\n", f)
+    }
+    var args = common.Args{40, 3, funcArgs}
     var result = common.Result{}
+    err = client.Call("common.MathServ.SetCB", args, &result)
+
     fmt.Println("开始调用！")
 	
 	// 调用方式：Namepsace.Method()
@@ -24,4 +30,5 @@ func main() {
         fmt.Println("调用失败！", err)
     }
     fmt.Println("调用成功！结果：", result.Value)
+
 }
