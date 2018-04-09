@@ -4,8 +4,17 @@ body {
     flex-direction: column;
 }
 
-main {
-    flex: 1 0 auto;
+@media screen and (min-width:1200px) {
+    main {
+        flex: 1 0 auto;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    main {
+        flex: 1 0 auto;
+        width: 1000px;
+    }
 }
 
 #chat-messages {
