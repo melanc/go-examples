@@ -1,12 +1,14 @@
-package base
+package golang
 
 //声明一个常量
 
 const MAX = 4096
+
 //声明一个指定类型的常量
 
 const LIMIT int16 = 1024
 const LIMIT2 = int16(1024)
+
 //声明一组常量
 
 const (
@@ -24,7 +26,7 @@ const (
 
 //用iota简化上面的写法
 const (
-	start3  int8 = 1 << iota
+	start3 int8 = 1 << iota
 	resume4
 	stop4
 )

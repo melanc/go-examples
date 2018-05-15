@@ -1,9 +1,9 @@
-package base
+package golang
 
 import (
 	"fmt"
-	"time"
 	"testing"
+	"time"
 )
 
 func TestSelect2(t *testing.T) {

@@ -1,4 +1,4 @@
-package base
+package golang
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 
 type User struct {
 	name string
-	age int
+	age  int
 }
 
 type Manager struct {
@@ -15,11 +15,11 @@ type Manager struct {
 	title string
 }
 
-func (Manager) Rest(){
+func (Manager) Rest() {
 	fmt.Println("resting...")
 }
 
-func (*Manager) Work(){
+func (*Manager) Work() {
 	fmt.Println("working...")
 }
 
@@ -27,18 +27,18 @@ func TestStruct(t *testing.T) {
 	// 创建方式一：T{...}
 	u1 := User{
 		name: "wang",
-		age: 24,
+		age:  24,
 	}
 	u1.name = "Wang"
 	fmt.Printf("u1: %v\n", u1)
-	
+
 	// 创建方式二，指针：&T{...}
 	u2 := &User{
 		name: "dong",
-		age: 30,
+		age:  30,
 	}
 	u2.name = "Dong"
-	(*u2).age = 28	// 都可以
+	(*u2).age = 28 // 都可以
 	fmt.Printf("u2: %v\n", u2)
 
 	// 创建方式三，指针：new(T)

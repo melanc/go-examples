@@ -1,4 +1,4 @@
-package base
+package golang
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ type Handler2 interface {
 // 实现了Handler接口
 type HandlerFunc func(k, v interface{})
 
-func (f HandlerFunc)Do(k, v interface{}){
+func (f HandlerFunc) Do(k, v interface{}) {
 	f(k, v)
 }
 
@@ -26,11 +26,11 @@ func Each2(m map[interface{}]interface{}, h Handler2) {
 
 type welcome2 string
 
-func (w welcome2)selfInfo(k, v interface{}){
+func (w welcome2) selfInfo(k, v interface{}) {
 	fmt.Printf("%s, 我叫%s，今年%d岁\n", w, k, v)
 }
 
-func TestInterface2(t *testing.T){
+func TestInterface2(t *testing.T) {
 	m := make(map[interface{}]interface{}, 9)
 	m["小明"] = 20
 	m["小红"] = 21
