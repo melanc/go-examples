@@ -1,4 +1,4 @@
-package base
+package golang
 
 import (
 	"fmt"
@@ -21,11 +21,11 @@ func Each(m map[interface{}]interface{}, h Handler) {
 type welcome string
 
 // 实现Handler接口
-func (w welcome)Do(k, v interface{}){
+func (w welcome) Do(k, v interface{}) {
 	fmt.Printf("%s, 我叫%s，今年%d岁\n", w, k, v)
 }
 
-func TestInterface(t *testing.T){
+func TestInterface(t *testing.T) {
 	m := make(map[interface{}]interface{}, 9)
 	m["小明"] = 20
 	m["小红"] = 21

@@ -1,4 +1,4 @@
-package base
+package golang
 
 import (
 	"fmt"
@@ -39,7 +39,5 @@ func TestMain(t *testing.T) {
 	for k, v := range a {
 		fmt.Printf("%s=%d\n", k, v)
 	}
-
-
 
 }

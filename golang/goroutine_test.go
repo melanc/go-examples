@@ -1,8 +1,8 @@
-package base
+package golang
 
 import (
-	"sync"
 	"math"
+	"sync"
 	"testing"
 )
 

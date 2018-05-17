@@ -1,4 +1,4 @@
-package base
+package golang
 
 import (
 	"fmt"
@@ -6,11 +6,11 @@ import (
 )
 
 type Rect struct {
-	x, y float64
+	x, y          float64
 	width, height float64
 }
 
-func TestNew(t *testing.T){
+func TestNew(t *testing.T) {
 	// 返回指针
 	var b *bool = new(bool)
 	*b = true
@@ -29,7 +29,6 @@ func TestNew(t *testing.T){
 
 	var m *map[string]int = new(map[string]int)
 	fmt.Println(*m)
-
 
 	var r *Rect = new(Rect)
 	r.x = 0

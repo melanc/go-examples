@@ -1,4 +1,4 @@
-package base
+package golang
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 type Student struct {
-	id int
+	id   int
 	name string
 }
 
@@ -31,4 +31,3 @@ func TestStruct2(t *testing.T) {
 	(*Student).TestVal(&u)
 
 }
-

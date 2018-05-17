@@ -1,4 +1,4 @@
-package base
+package golang
 
 import (
 	"fmt"
@@ -33,7 +33,7 @@ func find(slice []int, index int) int {
 }
 
 //清空slice
-func empty(slice []int) []int{
+func empty(slice []int) []int {
 	slice = append([]int{})
 	return slice
 }
@@ -45,7 +45,7 @@ func list(slice []int) {
 	}
 }
 
-func TestSlice(t *testing.T){
+func TestSlice(t *testing.T) {
 	// 声明
 	var s1 []int
 
@@ -67,7 +67,7 @@ func TestSlice(t *testing.T){
 	s1 = empty(s1)
 	fmt.Printf("s1: %v\n", s1)
 
-	for i:=0; i<10; i++ {
+	for i := 0; i < 10; i++ {
 		s2 = add(s2, i)
 	}
 	fmt.Printf("s2: %v, len: %d, cap: %d\n", s2, len(s2), cap(s2))
